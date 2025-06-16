@@ -55,6 +55,10 @@ def main():
     print("--- Starting Interaction ---")
     
     try:
+        question0 = "Siapa yang kamu  kenal sebagai artis yang memiliki album 'A Night at the Opera'?"
+        result0 = agent_executor.invoke({"input": question0})
+        print("\n> Final Answer:", result0.get("output", "No output found."))
+
         # Example Question 1
         question1 = "How many artists are in the database?"
         result1 = agent_executor.invoke({"input": question1})
@@ -73,6 +77,7 @@ def main():
         question3 = "Which track is the longest in milliseconds? Which artist is it by?"
         result3 = agent_executor.invoke({"input": question3})
         print("\n> Final Answer:", result3.get("output", "No output found."))
+        
 
     except Exception as e:
         print(f"\nAn error occurred while running the agent: {e}")
